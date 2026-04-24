@@ -18,8 +18,16 @@ Sensörler, fiziksel olayları algılayarak elektronik sinyallere (yani verilere
 **Uçta Yapay Zeka**  
 Bir uygulama için geliştirilen yapay zeka çözümlerinin işletilmesi modern sistemlerde iki farklı türde yapılabilmektedir. Bunlardan birincisi olan bulutta yapay zeka, bir yapay zeka modelinin bulut sunucu üzerinde tesisi (örneğin: AWS/Azure gibi platformlar) ve bu yapay zeka modeline gönderilen veri örnekleri için modelden alınan tahminlerin tekrar göndericiye iletilmesi usulüyle çalışmaktadır. Bir diğer alternatif olan uçta yapay zeka, bir modelin doğrudan çözüm için kullanılan bir uç birimde (_edge_, örneğin: sensör kartı) işletilmesi ve girdi veriler için elde edilen tahminlerin doğrudan aynı platform üzerinde elde edilebilmesidir. Uçta yapay zeka çözümleri, verinin tahminleme için başka bir platforma gönderilmemesi sebebiyle başta düşük gecikme, düşük bant genişliği, düşük güç tüketimi ve veri gizliliği olmak üzere pek çok getiri sağlamaktadır.
 
+## Geliştirme Ortamı Kurulumu
+Aktivitelere başlamadan önce aşağıdaki ortak kurulum kılavuzunu takip ederek geliştirme ortamınızı hazırlayınız. Bu kılavuz her iki aktivite için geçerlidir ve yalnızca bir kez uygulanması yeterlidir.
+
+### ↳ [Geliştirme Ortamı Kurulumu — VS Code & ABOV A34G43x](SETUP_VSCODE.md)
+VS Code, CMake, Ninja, ARM GCC Toolchain kurulumu ve proje derleme/yükleme adımlarını içerir.
+
+---
+
 ## Çalıştay Aktiviteleri
-Tiremo® Accelerator Workshops etkinliğimizde kullanıcıların katılımıyla interaktif olarak Tiremo®Cortex kullanılarak gerçekleştirilecek aktiviteler için gerekli çalışma ortamları ve kurulum adımları ilgili başlıkta verilmiştir. Ön gereksinimlerin edinimi için sırasıyla her bir aktivite için oluşturulan kurulum kılavuzlarına giderek gerekli adımları uygulayınız. 
+Tiremo® Accelerator Workshops etkinliğimizde kullanıcıların katılımıyla interaktif olarak Tiremo®Cortex kullanılarak gerçekleştirilecek aktiviteler için gerekli çalışma ortamları ve kurulum adımları ilgili başlıkta verilmiştir. Geliştirme ortamı kurulumunu tamamladıktan sonra aşağıdaki aktivitelere geçiniz.
 
 ### ↳ [1) Tiremo®Cortex ile Veri Toplama ve MQTT Haberleşmesi](Activity1_Sensor_Connectivity_and_MQTT)
 Tiremo®Cortex kullanılarak oluşturulan veri akışının MQTT protokolü ile bulutta işlenebilmesini konu alan aktivite için gerekli geliştirme adımlarını içerir. 
@@ -33,11 +41,16 @@ Repository içerisindeki her bir "Activity" klasörü, etkinliğimizde yer alaca
 
 ```
 Workshop Repository
-├── Activity1_Sensor_Connectivity_and_MQTT
-│   ├── Kaynak Kod & Materyaller
+├── SETUP_VSCODE.md                              ← Ortak geliştirme ortamı kurulum kılavuzu
+├── Activity1_Sensor_Connectivity_and_MQTT/
+│   ├── Project_MQTT/
+│   │   └── AUDK32_A34xxxx-1.0.11/           ← ABOV A34G43x MCU firmware projesi
+│   │       ├── Example/Source/TmplUserApp/  ← Uygulama kaynak kodu
+│   │       ├── Platform/HAL/                ← HAL sürücüleri
+│   │       └── flash.bat                    ← Tek komutla derle + yükle
 │   └── Aktivite-1 Kılavuzu (README.md)
-│ 
-└── Activity2_EdgeAI_Solutions_and_Deployment
+│
+└── Activity2_EdgeAI_Solutions_and_Deployment/
     ├── Kaynak Kod & Materyaller
     └── Aktivite-2 Kılavuzu (README.md)
 ```
@@ -46,10 +59,13 @@ Workshop Repository
 Etkinliğimizde kullanılacak çalışma ortamlarının kurulumları sonrası hazırladığımız checklist ile gereksinimlerin kontrolünü sağlayabilirsiniz.
 
 **Aktivite-1 Tiremo®Cortex ile Veri Toplama ve MQTT Haberleşmesi**
-- [ ] Tiremo®Cortex ile Veri Toplama ve MQTT Haberleşmesi
+- [ ] [SETUP_VSCODE.md](SETUP_VSCODE.md) kılavuzu tamamlandı (VS Code, CMake, Ninja, ARM GCC)
+- [ ] `Activity1_Sensor_Connectivity_and_MQTT/Project_MQTT/AUDK32_A34xxxx-1.0.11/` projesi VS Code'da açıldı ve başarıyla derlendi
 - [ ] Aktivite-1 Kaynak Dosyaları
 
 **Aktivite-2 Tiremo®Intelligence ile Uçta Yapay Zeka Çözümleri Geliştirme**
+- [ ] [SETUP_VSCODE.md](SETUP_VSCODE.md) kılavuzu tamamlandı (MCU'ya model yüklemek için gereklidir)
+- [ ] `Activity1_Sensor_Connectivity_and_MQTT/Project_MQTT/AUDK32_A34xxxx-1.0.11/` projesi VS Code'da açıldı ve başarıyla derlendi
 - [ ] Aktivite-2 Kaynak Dosyaları (Tiremo®Intelligence)
 
 ## Güncellemeler
@@ -63,8 +79,8 @@ Tüm aktiviteler için temel bileşenleri içeren kılavuzlar repository içeris
 
 Aktivite çalışma ortamlarının kurulumlarıyla ilgili soru ve taleplerinizi **ai@empa.com** adresine iletebilirsiniz.
 
-Workshop aktiviteleri için sağlanan çalışma ortamlarının son hallerini edinmek için "Güncellemeler" başlığını kontrol ediniz. Kurulumlarını bitirmiş olduğunuz çalışma ortamınıza mevcut güncellemeleri eklemek için terminalinizde çalıştay klasörünün bulunduğu dizine gidiniz ve "git pull" komutu ile güncellemeleri ekleyiniz:
+Workshop aktiviteleri için sağlanan çalışma ortamlarının son hallerini edinmek için "Güncellemeler" başlığını kontrol ediniz. Kurulumlarını bitirmiş olduğunuz çalışma ortamınıza mevcut güncellemeleri eklemek için terminalinizde repo klasörüne gidiniz ve "git pull" komutu ile güncellemeleri ekleyiniz:
 ```
-cd Workshop_Workspace/Tiremo-Accelerator-Workshops-AIoT
+cd Tiremo-Accelerator-Workshops-AIoT
 git pull origin master
 ```

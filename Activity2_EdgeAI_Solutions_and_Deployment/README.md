@@ -26,7 +26,13 @@ emlearn, scikit-learn ile geliştirilmiş makine öğrenimi modellerini uç biri
 Tiremo®Intelligence, makine öğrenimi modellerini eğitimden uç birime konuşlandırmaya kadar uçtan uca yöneten bir çözüm setidir. Popüler ML kütüphaneleriyle eğitilen modeller; dahili sıkıştırma ve derleme araçlarından geçerek emlearn, LiteRT Micro ve m2cgen gibi uç birim çalışma zamanlarına dönüştürülür ve Tiremo®Cortex gibi kaynak kısıtlı donanımlar üzerinde sensör tabanlı uygulamalarda koşturulur. Gömülü yazılım geliştiricileri ve AIoT uygulama ekiplerini hedefleyen bu iş akışı, modelden üretime geçişi tek bir çatı altında yönetir.
 
 **Kurulum**  
-Bu adımdaki tüm işlemler bulut tabanlı bir geliştirme ortamı olan **Google Colab** üzerinde gerçekleştirilecektir. Google Colab, kullanıcıların Python kodlarını tarayıcı üzerinden çalıştırmalarına olanak tanır ve TensorFlow, scikit-learn gibi popüler kütüphanelerin önceden yüklenmiş olarak gelmesi sayesinde hızlı bir başlangıç yapmanızı sağlar. Google Colab'a erişmek için "Aktivite" başlığı altındaki linkleri, Google hesabınızla giriş yaparak kullanabilirsiniz.
+Bu aktivite iki ayrı ortam gerektirir:
+
+- **Model Geliştirme (Google Colab):** Makine öğrenimi modelinin eğitimi ve dönüştürülmesi, bulut tabanlı geliştirme ortamı olan Google Colab üzerinde gerçekleştirilecektir. "Aktivite" başlığı altındaki linke Google hesabınızla giriş yaparak erişebilirsiniz.
+
+- **MCU'ya Yükleme (VS Code + AUDK32):** Eğitilen modelin Tiremo®Cortex üzerine yüklenmesi için MCU geliştirme ortamı gerekmektedir.
+  ### ↳ [Geliştirme Ortamı Kurulumu — VS Code & ABOV A34G43x](../SETUP_VSCODE.md)
+  VS Code, CMake, Ninja ve ARM GCC kurulumu ile `Activity1_Sensor_Connectivity_and_MQTT/Project_MQTT/AUDK32_A34xxxx-1.0.11/` projesini derleme adımlarını içerir.
 
 **Kaynaklar & Okuma Önerileri**  
 1. [scikit-learn: Machine Learning in Python](https://scikit-learn.org/)
