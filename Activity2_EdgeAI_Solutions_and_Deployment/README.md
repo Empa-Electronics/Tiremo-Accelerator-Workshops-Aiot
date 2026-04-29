@@ -11,8 +11,11 @@ Aktivite içeriği olan "El Hareketi Tanıma" uygulaması, Empa Electronics tara
 <img src="./Additionals/Hand-Characters.png" alt="El Hareketi Sınıfları" width="800"/>
 
 ## Aktivite
-### ↳ [Tiremo®Cortex Platformunda Uçta Yapay Zeka Çözümleri: El Hareketi Tanıma (scikit-learn ile Random Forest)](https://colab.research.google.com/drive/1bbg1bfcpoIIn0kcI18elS_EtdG5Iee-f)
+### ↳ 1. [Tiremo®Cortex Platformunda Uçta Yapay Zeka Çözümleri: El Hareketi Tanıma (scikit-learn ile Random Forest)](https://colab.research.google.com/drive/1bbg1bfcpoIIn0kcI18elS_EtdG5Iee-f)
 Aktivite içeriği olan "El Hareketi Tanıma" uygulamasının scikit-learn kütüphanesi ile oluşturulmuş Random Forest modelinin **Google Colab** üzerinde geliştirilmesini ve Tiremo®Intelligence'a entegre edilmiş emlearn aracı ile uç birime taşınmasını konu alan uygulama adımlarını içerir.
+### ↳ 2. [Tiremo®Cortex Platformunda Uçta Yapay Zeka Çözümleri: El Hareketi Tanıma (emlearn ile Model Dönüşümü)](./EdgeAI_Entegrasyon.md)
+Aktivite içeriği olan "El Hareketi Tanıma" uygulamasının Google Colab üzerinde geliştirilmiş Random Forest modelinin emlearn aracı ile Tiremo®Cortex üzerinde çalışacak hale getirilmesini konu alan uygulama adımlarını içerir.
+
 
 ## Tiremo®Cortex Platformunda Uçta Yapay Zeka
 
@@ -31,7 +34,7 @@ Bu aktivite iki ayrı ortam gerektirir:
 - **Model Geliştirme (Google Colab):** Makine öğrenimi modelinin eğitimi ve dönüştürülmesi, bulut tabanlı geliştirme ortamı olan Google Colab üzerinde gerçekleştirilecektir. "Aktivite" başlığı altındaki linke Google hesabınızla giriş yaparak erişebilirsiniz.
 
 - **MCU'ya Yükleme (VS Code + AUDK32):** Eğitilen modelin Tiremo®Cortex üzerine yüklenmesi için MCU geliştirme ortamı gerekmektedir.
-  ### ↳ [Geliştirme Ortamı Kurulumu](Kurulum.md)
+  ### ↳ [Geliştirme Ortamı Kurulumu](../Kurulum.md)
   Etkiliğinde kullanılacak çalışma ortamlarının kurulum adımlarını içerir.
 
 **Kaynaklar & Okuma Önerileri**  
